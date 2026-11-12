@@ -104,7 +104,10 @@ export default function TwinAvatar3D() {
       utterance.onerror = () => { setWaving(false); setSpeaking(false); };
       window.speechSynthesis.speak(utterance);
     } else {
-      window.setTimeout(() => { setWaving(false); setSpeaking(false); }, 2600);
+      globalThis.setTimeout(() => {
+        setWaving(false);
+        setSpeaking(false);
+      }, 2600);
     }
   }
   return <div className="twin-3d-stage">
